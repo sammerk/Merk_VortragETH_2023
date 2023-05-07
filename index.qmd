@@ -1,0 +1,444 @@
+---
+title: "Leveraging Retrieval Practice" 
+subtitle: "im Kontext einer Methodeneinführung für Lehramtsstudierende"
+author: "Samuel Merk"
+format: 
+  revealjs:
+    auto-stretch: false
+    controls: true
+    slide-number: false
+    logo: img/PHlogo.svg
+    theme: [dark, css/custom.scss]
+    fullscreen: true
+    pdfexport: true
+bibliography: references.bib
+csl: apa.csl
+editor_options: 
+  chunk_output_type: console
+---
+
+## Überblick {.center}
+<script src="//cdn.wordart.com/wordart.min.js" async defer></script>
+```{r hidden chunk which creates template stuff}
+#| echo: false
+#| cache: true
+
+## in terminal ########
+# quarto install extension quarto-ext/fontawesome
+# quarto install extension schochastics/academicons
+#
+
+########################
+library(fontawesome)
+library(tidyverse)
+set.seed(848265)
+
+# Change css to lecker PH green
+if(!dir.exists("img"))
+dir.create("img")
+if(!dir.exists("css"))
+dir.create("css")
+fileConn<-file("css/custom.scss")
+writeLines(c("/*-- scss:defaults --*/",
+             "$link-color: #8cd000 !default;",
+             ".imp {color: #8cd000;}",
+             ".em15 {font-size:1.5em;}",
+             ".c {text-align: right !important;}",
+             ".callout-title {background-color: #8cd000 !important;}",
+             "#vcenter {vertical-align: middle;}",
+             ".reveal .slides section .fragment.highlight-green.visible {
+               color: #8cd000;}"),
+           fileConn)
+close(fileConn)
+```
+
+. . .
+
+Retrieval Practice
+
+. . .
+
+[[{{< fa bullseye >}}]{.imp} Definition]{style="padding-left:100px"}  
+
+. . .  
+
+[[{{< fa gears >}}]{.imp} Erklärmodelle]{style="padding-left:100px"}  
+
+. . .  
+
+[[{{< fa ruler-vertical >}}]{.imp} Prävalenz]{style="padding-left:100px"}  
+
+. . .
+
+Aktuelle Studie
+
+. . .
+
+[[{{< fa dumbbell >}}]{.imp} Motivation]{style="padding-left:100px"}  
+
+. . .  
+
+[[{{< fa compass-drafting >}}]{.imp} Design]{style="padding-left:100px"}  
+
+. . .  
+
+[[{{< fa chart-pie >}}]{.imp} Ergebnisse]{style="padding-left:100px"}  
+
+
+## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
+> [...] retrieval practice [...] can more effectively consolidate long-term retention of studied information [...] and facilitate mastery of new information [...] by comparison with other strategies [...] [@yang2021].
+
+. . .
+
+:::: {.columns}
+
+::: {.column width='50%'}
+```{r}
+#| fig-width: 4
+#| fig-height: 4
+#| #| cache: true
+library(tidyverse)
+library(hrbrthemes)
+read_delim("data/data_publications.csv", 
+           delim = ",",
+           col_names = c("Jahr", "Anzahl Publikationen zu Retrieval Practice")) |> 
+  ggplot(aes(Jahr, `Anzahl Publikationen zu Retrieval Practice`)) +
+  geom_point(color = "#8cd000") +
+  theme_modern_rc() +
+  ylab("") +
+  labs(title = "Number of Publications", 
+       subtitle = "On Retrieval Practice",
+       caption = "nach Karpicke (2017)")
+```
+
+:::
+
+::: {.column width='50%'}
+<div style="width: 400px; height: 400px;" data-wordart-src="//cdn.wordart.com/json/38ki7ezv8oov"></div>
+:::
+
+::::
+
+## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
+> [...] [retrieval practice]{.imp} [...] can more effectively consolidate long-term retention of studied information [...] and facilitate mastery of new information [...] by comparison with other strategies [...] [@yang2021].
+
+<br>
+
+### Retrieval Practice (u.a)
+* Multiple Choice [@butler2007a]
+* Fill-in-the-blank [@hinze2011]
+* Cued recall [@carpenter2006]
+* Short answer [@mcdaniel2007]
+* Free recall [@lipowski2014]
+* Short essay [@steenhuis2009]
+
+## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
+> [...] retrieval practice [...] can more effectively [consolidate long-term retention of studied information]{.imp} [...] and facilitate mastery of new information [...] by comparison with other strategies [...] [@yang2021].
+
+<br>
+
+![](img/Backward Testing Effect.svg){fig-align="center" width=80%}
+<center>[Backward Testing Effect [@karpicke2017]]{style="font-size:.8em;"}</center>
+
+## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
+> [...] retrieval practice [...] can more effectively consolidate long-term retention of studied information [...] and [facilitate mastery of new information]{style="color:#d77d00;"} [...] by comparison with other strategies [...] [@yang2021].
+
+<br>
+
+![](img/Forward Testing Effect.svg){fig-align="center" width=80%}
+<center>[Forward Testing Effect [@pastotter2014]]{style="font-size:.8em;"}</center>
+
+
+## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
+> [...] retrieval practice [...] can more effectively consolidate long-term retention of studied information [...] and facilitate mastery of new information [...] [by comparison with other strategies]{.imp} [...] [@yang2021].
+
+<br>
+
+### Untersuchte Kontrollbedingungen (u.a)
+* Restudying [@roediger2006] 
+* Concept Mapping [@lechuga2015; @karpicke2011]
+* Notetaking [@rummer2017]
+* Keyword Mnemonic [@karpicke2012a]
+* Mediator-Generation [@karpicke2012a]
+
+
+## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
+> [...] retrieval practice [...] can [more effectively]{.imp} consolidate long-term retention of studied information [...] and facilitate mastery of new information [...] by comparison with other strategies [...] [@yang2021].
+
+<br>
+
+### Effektstärken in Yang et al. [-@yang2021]
+```{r}
+#| fig-width: 13
+#| fig-height: 3.5
+#| fig-format: svg
+#| cache: true
+
+library(tidyverse)
+library(patchwork)
+library(hrbrthemes)
+plot1 <-
+  ggplot(data.frame(x = c(-3, 3.61)), aes(x)) +
+  stat_function(
+    geom = "line", 
+    fun = dnorm,
+    color = "#8cd000"
+  ) +
+  stat_function(
+    geom = "line", 
+    fun = dnorm,
+    args = list(mean = .61),
+    color = "#8cd000"
+  ) +
+  stat_function(
+    geom = "area", 
+    fun = dnorm,
+    fill = "#8cd00050",
+    color="#ffffff00"
+  ) +
+  stat_function(
+    geom = "area", 
+    fun = dnorm,
+    args = list(mean = .61),
+    fill = "#8cd00050",
+    color="#ffffff00"
+  ) +
+  xlim(c(-3, 3.61)) +
+  ggtitle("RP vs. Filler Activity", bquote("g = .61")) +
+  theme_modern_rc() +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.text.x = element_blank())
+
+plot2 <-
+  ggplot(data.frame(x = c(-3, 3.33)), aes(x)) +
+  stat_function(
+    geom = "line", 
+    fun = dnorm,
+    color = "#8cd000"
+  ) +
+  stat_function(
+    geom = "line", 
+    fun = dnorm,
+    args = list(mean = .33),
+    color = "#8cd000"
+  ) +
+  stat_function(
+    geom = "area", 
+    fun = dnorm,
+    fill = "#8cd00050",
+    color="#ffffff00"
+  ) +
+  stat_function(
+    geom = "area", 
+    fun = dnorm,
+    args = list(mean = .33),
+    fill = "#8cd00050",
+    color="#ffffff00"
+  ) +
+  xlim(c(-3, 3.33)) +
+  ggtitle("RP vs. Restudying", bquote("g = .33")) +
+  theme_modern_rc() +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.text.x = element_blank())
+
+
+plot3 <-
+  ggplot(data.frame(x = c(-3, 3.095)), aes(x)) +
+  stat_function(
+    geom = "line", 
+    fun = dnorm,
+    color = "#8cd000"
+  ) +
+  stat_function(
+    geom = "line", 
+    fun = dnorm,
+    args = list(mean = .095),
+    color = "#8cd000"
+  ) +
+  stat_function(
+    geom = "area", 
+    fun = dnorm,
+    fill = "#8cd00050",
+    color="#ffffff00"
+  ) +
+  stat_function(
+    geom = "area", 
+    fun = dnorm,
+    args = list(mean = .095),
+    fill = "#8cd00050",
+    color="#ffffff00"
+  ) +
+  xlim(c(-3, 3.095)) +
+  ggtitle("RP vs. other elaborative strategies", bquote("g = .095")) +
+  theme_modern_rc() +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.text.x = element_blank())
+
+
+plot1 + plot2 + plot3 +
+  plot_layout() &
+   theme(plot.background = element_rect(fill = "#1e1e1e",
+                                        color = "#1e1e1e")) # 1e1e1e from hrbr
+```
+
+
+## Testing Effect: Erklärmodelle [{{< fa gears >}}]{.imp}
+* »Direkte Mechanismen«
+    * Additional Exposure [@glover1989]
+    * Retrieval Effort [@bjork2014]
+* »Indirekte Mechanismen«    
+    * Transfer-Appropriate Processing [@chan2018]
+    * Motvation [@yang2018]
+
+## Testing Effect: Prävalenz [{{< fa ruler-vertical >}}]{.imp} {.smaller}
+> *»[W]e suspect that most students would prefer to take as few tests as possible.«* [@dunlosky2013, pp. 29]
+
+<br>
+
+* Restudying hat höhere wahrgenommene Nützlichkeit [@roediger2006]
+* »Perceiving Effort as Poor Learning« [@kirk-johnson2019]
+* Fragebogenstudien implizieren, dass ca. nur jede*r zehnte Studierende Retrieval Practice zum Lernen nutzt [@karpicke2009]
+* Self-Testing wird mehrheitlich zur Selbstdiagnose verwendet [@kornell2007]
+
+## <!-- Aktuelle Studie --> {.center}
+![](img/study.png){}
+
+## Aktuelle Studie
+#### Forschungsfragen [{{< fa circle-question >}}]{.imp}
+* Welche Effekte zeigt Retrieval Practice im Kontext einer Methodeneinführung für Lehramtsstudierende? 
+* Kann Active Retrieval Practice (und dessen Wirksamkeit) durch parametrisierte Aufgaben gefördert werden?
+
+#### Design [{{< fa compass-drafting >}}]{.imp}
+![](img/Design.svg){}
+
+
+## Materials {.smaller}
+<!--
+::: {.panel-tabset}
+
+
+### Beispiel 1
+:::: {.columns}
+
+::: {.column width="50%"}
+<iframe id="aufgabe1" src="https://sammerk.shinyapps.io/Skalenniveau_erkennen_mitParameter/" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" id="iframe_container" frameborder="0" ></iframe>
+</center>
+<style>
+#aufgabe1 { height: 480px; width: 480px; margin-top: 0.0cm; border:0px;}
+</style> 
+:::
+
+::: {.column width="50%"}
+<iframe id="aufgabe4" src="https://sammerk.shinyapps.io/Skalenniveau_erkennen_ohneParameter/" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" id="iframe_container" frameborder="0" ></iframe>
+</center>
+<style>
+#aufgabe4 { height: 480px; width: 480px; margin-top: 0.0cm; border:0px;}
+</style> 
+:::
+
+::::
+
+
+
+### Beispiel 2
+:::: {.columns}
+
+::: {.column width="50%"}
+<iframe id="aufgabe3" src="https://sammerk.shinyapps.io/Streuung_VERA_graph_mitParameter/" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" id="iframe_container" frameborder="0" ></iframe>
+</center>
+<style>
+#aufgabe3 { height: 480px; width: 480px; margin-top: 0.0cm; border:0px;}
+</style> 
+:::
+
+::: {.column width="50%"}
+<iframe id="aufgabe4" src="https://sammerk.shinyapps.io/Streuung_VERA_graph_ohneParameter/" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" id="iframe_container" frameborder="0" ></iframe>
+</center>
+<style>
+#aufgabe4 { height: 480px; width: 480px; margin-top: 0.0cm; border:0px;}
+</style> 
+:::
+
+::::
+
+
+### Beispiel 3
+:::: {.columns}
+
+::: {.column width="50%"}
+<iframe id="aufgabe5" src="https://sammerk.shinyapps.io/Interpret_d_BF_mitParameter" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" id="iframe_container" frameborder="0" ></iframe>
+</center>
+<style>
+#aufgabe5 { height: 480px; width: 480px; margin-top: 0.0cm; border:0px;}
+</style> 
+:::
+
+::: {.column width="50%"}
+<iframe id="aufgabe6" src="https://sammerk.shinyapps.io/Interpret_d_BF_ohneParameter" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" id="iframe_container" frameborder="0" ></iframe>
+</center>
+<style>
+#aufgabe6 { height: 480px; width: 480px; margin-top: 0.0cm; border:0px;}
+</style> 
+:::
+
+::::
+
+:::
+
+-->
+
+
+## Stichprobe
+```{r}
+#| label: import data from suf
+library(tidyverse)
+data_exam <- 
+  read_csv("data/data_exam_suf.csv")
+data_practice <- 
+  read_csv("data/data_practice_suf.csv")
+data_survey <- 
+  read_csv("data/data_survey_suf.csv")
+data_exp_samplings <- 
+  read_csv("data/data_exp_sampling_suf.csv")
+condition_per_PID_and_topic <- 
+  read_csv("data/condition_per_PID_and_topic.csv")
+good_ids <- 
+  read_csv("data/data_good_ids_suf.csv")
+
+data_practice_cum <- 
+  data_practice %>% 
+  group_by(PID, Topic, UV) %>% 
+  summarise(practice = n()) %>% 
+  ungroup() %>% 
+  full_join(condition_per_PID_and_topic) %>% 
+  filter(!is.na(UV)) %>%  # stemming from moodleIDs without groups
+  mutate(practice = ifelse(is.na(practice), 0, practice))
+```
+
+* Durchführung im Rahmen der VL »Einführung in qualitative und quantitative Forschungsmethoden«
+* *N* = `r good_ids |> filter(informed_consent == T) |> nrow()` angemeldete Studierende;  `r data_exam |> select(PID) |> unique() |> nrow()` Klausurteilnahmen
+* `r data_exp_samplings |> nrow()` Experiencesamplings von *N* = `r data_exp_samplings |> select(REF) |> unique() |> nrow()` Studierenden
+* Studierende mehrheitlich im 3. Semester Bachelor of Education (Primarstufe, Sekundarstufe I)
+
+
+## Ergebnisse I [{{< fa chart-pie >}}]{.imp}
+### Verteilung Retrieval Practice
+
+
+
+
+## Literatur
+
+::: {notes}
+* Bevor in Details der Definition, kleine historische Anmerkungen:
+    * Man findet findet über 110 Jahre alte Publikationen zum Testing Effekt
+    * Edwina Abbott 1909 Master Thesis Univ Illinois. Verlgeichbare Experimente zu den heutigen
+    * William Gosset t-Test ein JAhr vorher in der Biometrika 
+* Gegenstände mit solch langer Historie haben ja typischerweise keinen einheitliche Gebrauch von Begriffen. So auch hier
+:::
