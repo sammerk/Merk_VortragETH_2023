@@ -89,16 +89,16 @@ close(fileConn)
 :::
 
 ## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
+::: {.fragment fragment-index=2}
 > [...] retrieval practice [...] can more effectively consolidate long-term retention of studied information [...] and facilitate mastery of new information [...] by comparison with other strategies [...]. This phenomenon is termed the testing effect [...] [@yang2021].
-
-. . .
+:::
 
 :::: {.columns}
 
 ::: {.column width='50%'}
 ```{r}
-#| fig-width: 3.8
-#| fig-height: 3.8
+#| fig-width: 3.5
+#| fig-height: 3.5
 #| #| cache: true
 library(tidyverse)
 library(hrbrthemes)
@@ -117,7 +117,7 @@ read_delim("data/data_publications.csv",
 :::
 
 ::: {.column width='50%'}
-<div style="width: 400px; height: 400px;" data-wordart-src="//cdn.wordart.com/json/38ki7ezv8oov"></div>
+<div style="width: 370px; height: 370px;" data-wordart-src="//cdn.wordart.com/json/38ki7ezv8oov"></div>
 :::
 
 ::::
@@ -358,7 +358,7 @@ plot1 + plot2 + plot3 +
 :::
 
 ## Materials {.smaller}
-<!--
+
 ::: {.panel-tabset}
 
 
@@ -430,7 +430,7 @@ plot1 + plot2 + plot3 +
 
 :::
 
--->
+
 
 
 ## Stichprobe
