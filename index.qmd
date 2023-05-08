@@ -89,7 +89,7 @@ close(fileConn)
 :::
 
 ## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
-> [...] retrieval practice [...] can more effectively consolidate long-term retention of studied information [...] and facilitate mastery of new information [...] by comparison with other strategies [...] [@yang2021].
+> [...] retrieval practice [...] can more effectively consolidate long-term retention of studied information [...] and facilitate mastery of new information [...] by comparison with other strategies [...]. This phenomenon is termed the testing effect [...] [@yang2021].
 
 . . .
 
@@ -97,8 +97,8 @@ close(fileConn)
 
 ::: {.column width='50%'}
 ```{r}
-#| fig-width: 4
-#| fig-height: 4
+#| fig-width: 3.8
+#| fig-height: 3.8
 #| #| cache: true
 library(tidyverse)
 library(hrbrthemes)
