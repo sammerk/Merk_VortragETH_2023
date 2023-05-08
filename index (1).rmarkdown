@@ -17,8 +17,10 @@ editor_options:
   chunk_output_type: console
 ---
 
+
 ## Überblick {.center}
 <script src="//cdn.wordart.com/wordart.min.js" async defer></script>
+
 ```{r hidden chunk which creates template stuff}
 #| echo: false
 #| cache: true
@@ -52,9 +54,10 @@ writeLines(c("/*-- scss:defaults --*/",
 close(fileConn)
 ```
 
+
 . . .
 
-**Retrieval Practice**
+Retrieval Practice
 
 . . .
 
@@ -70,7 +73,7 @@ close(fileConn)
 
 . . .
 
-**Aktuelle Studie**
+Aktuelle Studie
 
 . . .
 
@@ -85,7 +88,7 @@ close(fileConn)
 [[{{< fa chart-pie >}}]{.imp} Ergebnisse]{style="padding-left:100px"}  
 
 ::: {.footer}
-[{{< ai open-materials >}}]{.imp} Folien, [{{< ai open-data >}}]{.imp} Daten & Code unter [https://bit.ly/merk097]{.imp}
+[{{< ai open-materials >}}]{.imp} Folien, [{{< ai open-data >}}]{.imp} Daten & Code unter https://bit.ly/merk097
 :::
 
 ## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
@@ -96,6 +99,7 @@ close(fileConn)
 :::: {.columns}
 
 ::: {.column width='50%'}
+
 ```{r}
 #| fig-width: 4
 #| fig-height: 4
@@ -109,10 +113,11 @@ read_delim("data/data_publications.csv",
   geom_point(color = "#8cd000") +
   theme_modern_rc() +
   ylab("") +
-  labs(title = "Anzahl Publikationen", 
-       subtitle = "zu Retrieval Practice",
+  labs(title = "Number of Publications", 
+       subtitle = "On Retrieval Practice",
        caption = "nach Karpicke (2017)")
 ```
+
 
 :::
 
@@ -122,38 +127,21 @@ read_delim("data/data_publications.csv",
 
 ::::
 
-
-::: {.notes}
-* Bevor in Details der Definition, kleine historische Anmerkungen:
-    * Man findet findet über 110 Jahre alte Publikationen zum Testing Effekt
-    * Edwina Abbott 1909 Master Thesis Univ Illinois. Verlgeichbare Experimente zu den heutigen
-    * William Gosset t-Test ein JAhr vorher in der Biometrika 
-* Gegenstände mit solch langer Historie haben ja typischerweise keinen einheitliche Gebrauch von Begriffen. So auch hier
-:::
-
-::: {.footer}
-[{{< ai open-materials >}}]{.imp} Folien, [{{< ai open-data >}}]{.imp} Daten & Code unter [https://bit.ly/merk097]{.imp}
-:::
-
-
 ## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
-> [...] [retrieval practice]{.imp} [...] can more effectively consolidate long-term retention of studied information [...] and facilitate mastery of new information [...] by comparison with other strategies [...]. This phenomenon is termed the testing effect [...] [@yang2021].
+> [...] [retrieval practice]{.imp} [...] can more effectively consolidate long-term retention of studied information [...] and facilitate mastery of new information [...] by comparison with other strategies [...] [@yang2021].
 
 <br>
 
 ### Retrieval Practice (u.a)
-* Cued/Free recall [@carpenter2006; @lipowski2014]
-* Fill-in-the-blank [@hinze2011]
-* Short answer [@mcdaniel2007]
-* Short essay [@steenhuis2009]
 * Multiple Choice [@butler2007a]
-
-::: {.footer}
-[{{< ai open-materials >}}]{.imp} Folien, [{{< ai open-data >}}]{.imp} Daten & Code unter [https://bit.ly/merk097]{.imp}
-:::
+* Fill-in-the-blank [@hinze2011]
+* Cued recall [@carpenter2006]
+* Short answer [@mcdaniel2007]
+* Free recall [@lipowski2014]
+* Short essay [@steenhuis2009]
 
 ## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
-> [...] retrieval practice [...] can more effectively [consolidate long-term retention of studied information]{.imp} [...] and facilitate mastery of new information [...] by comparison with other strategies [...]. This phenomenon is termed the testing effect [...] [@yang2021].
+> [...] retrieval practice [...] can more effectively [consolidate long-term retention of studied information]{.imp} [...] and facilitate mastery of new information [...] by comparison with other strategies [...] [@yang2021].
 
 <br>
 
@@ -161,7 +149,7 @@ read_delim("data/data_publications.csv",
 <center>[Backward Testing Effect [@karpicke2017]]{style="font-size:.8em;"}</center>
 
 ## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
-> [...] retrieval practice [...] can more effectively consolidate long-term retention of studied information [...] and [facilitate mastery of new information]{style="color:#d77d00;"} [...] by comparison with other strategies [...]. This phenomenon is termed the testing effect [...] [@yang2021].
+> [...] retrieval practice [...] can more effectively consolidate long-term retention of studied information [...] and [facilitate mastery of new information]{style="color:#d77d00;"} [...] by comparison with other strategies [...] [@yang2021].
 
 <br>
 
@@ -170,22 +158,24 @@ read_delim("data/data_publications.csv",
 
 
 ## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
-> [...] retrieval practice [...] can more effectively consolidate long-term retention of studied information [...] and facilitate mastery of new information [...] [by comparison with other strategies]{.imp} [...]. This phenomenon is termed the testing effect [...] [@yang2021].
+> [...] retrieval practice [...] can more effectively consolidate long-term retention of studied information [...] and facilitate mastery of new information [...] [by comparison with other strategies]{.imp} [...] [@yang2021].
 
 <br>
 
 ### Untersuchte Kontrollbedingungen (u.a)
-* Filler Task; Restudying [@roediger2006] 
-* Concept Mapping [@lechuga2015]
+* Restudying [@roediger2006] 
+* Concept Mapping [@lechuga2015; @karpicke2011]
 * Notetaking [@rummer2017]
 * Keyword Mnemonic [@karpicke2012a]
 * Mediator-Generation [@karpicke2012a]
 
 
 ## Testing Effect [{{< fa bullseye >}}]{.imp} {.smaller .center}
-> [...] retrieval practice [...] can [more effectively]{.imp} consolidate long-term retention of studied information [...] and facilitate mastery of new information [...] by comparison with other strategies [...]. This phenomenon is termed the testing effect [...] [@yang2021].
+> [...] retrieval practice [...] can [more effectively]{.imp} consolidate long-term retention of studied information [...] and facilitate mastery of new information [...] by comparison with other strategies [...] [@yang2021].
 
 <br>
+
+### Effektstärken in Yang et al. [-@yang2021]
 
 ```{r}
 #| fig-width: 13
@@ -305,57 +295,38 @@ plot1 + plot2 + plot3 +
    theme(plot.background = element_rect(fill = "#1e1e1e",
                                         color = "#1e1e1e")) # 1e1e1e from hrbr
 ```
-<center> Effektstärken in Yang et al. [-@yang2021] </center>
+
+
 
 ## Testing Effect: Erklärmodelle [{{< fa gears >}}]{.imp}
-::: {.incremental}
 * »Direkte Mechanismen«
     * Additional Exposure [@glover1989]
     * Retrieval Effort [@bjork2014]
 * »Indirekte Mechanismen«    
     * Transfer-Appropriate Processing [@chan2018]
     * Motivation [@yang2018]
-:::
 
-::: {.notes}
-* Additional exposure alt, prädiziert bei filler task, prädiziert größere Effektstärke bei Filler
-* Retrieval Effort, kommt aus dem Framework der wünschenswerten Hindernisse. In dem dazugehörigen Memory modell wird ja zwischen storage strength und retrieval strength unterschieden. RP fostert beides. In line mit größeren Effekten bei schiwerigeren RP-Tasks
-* TAP, Prozesse bei RP ähnlicher den Prozessen bei transfer. In line mit häufig größeren Effekten bei gleichem Format von RP und Final Test
-:::
-
-## Testing Effect: Prävalenz [{{< fa ruler-vertical >}}]{.imp} {.smaller .center}
+## Testing Effect: Prävalenz [{{< fa ruler-vertical >}}]{.imp} {.smaller}
 > *»[W]e suspect that most students would prefer to take as few tests as possible.«* [@dunlosky2013, pp. 29]
 
 <br>
 
-::: {.incremental}
 * Restudying hat höhere wahrgenommene Nützlichkeit [@roediger2006]
 * »Perceiving Effort as Poor Learning« [@kirk-johnson2019]
 * Fragebogenstudien implizieren, dass ca. nur jede*r zehnte Studierende Retrieval Practice zum Lernen nutzt [@karpicke2009]
 * Self-Testing wird mehrheitlich zur Selbstdiagnose verwendet [@kornell2007]
-:::
 
 ## <!-- Aktuelle Studie --> {.center}
 ![](img/study.png){}
 
-
-## Aktuelle Studie {.smaller}
+## Aktuelle Studie
 #### Forschungsfragen [{{< fa circle-question >}}]{.imp}
 * Welche Effekte zeigt Retrieval Practice im Kontext einer Methodeneinführung für Lehramtsstudierende? 
 * Kann Active Retrieval Practice (und dessen Wirksamkeit) durch parametrisierte Aufgaben gefördert werden?
 
-<br>
-
-::: {.fragment}
 #### Design [{{< fa compass-drafting >}}]{.imp}
 ![](img/Design.svg){}
-:::
 
-::: {.notes}
-* Wissen der Methodologie/Statistik zeigt eine verglw. hierarchische Struktur
-* Motivation Lehramtsstudierender ist überschaubar --> damit vermutlich auch der Effort -->  
-* Versuch RP stärker als »Lerntätigkeit« zu framen --> Flipped CLassroom --> Proximität zu Videos --> Parametrisierung 
-:::
 
 ## Materials {.smaller}
 <!--
@@ -434,6 +405,7 @@ plot1 + plot2 + plot3 +
 
 
 ## Stichprobe
+
 ```{r}
 #| label: import data from suf
 library(tidyverse)
@@ -444,24 +416,7 @@ data_practice <-
 data_survey <- 
   read_csv("data/data_survey_suf.csv")
 data_exp_samplings <- 
-  read_csv("data/data_exp_sampling_suf.csv") |> 
-  mutate(across(c(CL01_01, CL01_02, CL01_03, CL01_04), 
-                function (x) ifelse(x == -9, NA, x)),
-         difficult1 = CL01_03, 
-         difficult2 = 8 - CL01_04,
-         sitinterest1 = UA01_01, 
-         sitinterest2 = 10 - UA01_02, 
-         sitinterest3 = UA01_04,
-         sitinterest4 = 10 - UA01_05,
-         sitinterest = sitinterest1 + sitinterest2 + 
-                       sitinterest3 + sitinterest4) |> 
-  rowwise() %>% 
-  mutate(`wahrgen. Schw.` = mean(c(difficult1, difficult2), na.rm = T),
-         `sit. Interesse` = mean(c(sitinterest1, 
-                                   sitinterest2,
-                                   sitinterest3,
-                                   sitinterest4), na.rm = T)) %>% 
-  ungroup()
+  read_csv("data/data_exp_sampling_suf.csv")
 condition_per_PID_and_topic <- 
   read_csv("data/condition_per_PID_and_topic.csv")
 good_ids <- 
@@ -477,8 +432,9 @@ data_practice_cum <-
   mutate(practice = ifelse(is.na(practice), 0, practice))
 ```
 
+
 * Durchführung im Rahmen der VL »Einführung in qualitative und quantitative Forschungsmethoden«
-* *N* = `r data_survey |> select(REF) |> unique() |> nrow()` angemeldete Studierende;  `r data_exam |> select(PID) |> unique() |> nrow()` Klausurteilnahmen
+* *N* = `r good_ids |> filter(informed_consent == T) |> nrow()` angemeldete Studierende;  `r data_exam |> select(PID) |> unique() |> nrow()` Klausurteilnahmen
 * `r data_exp_samplings |> nrow()` Experiencesamplings von *N* = `r data_exp_samplings |> select(REF) |> unique() |> nrow()` Studierenden
 * Studierende mehrheitlich im 3. Semester Bachelor of Education (Primarstufe, Sekundarstufe I)
 
@@ -488,6 +444,7 @@ data_practice_cum <-
 :::: {.columns}
 
 ::: {.column width='50%'}
+
 ```{r}
 #| fig-width: 6.5
 #| fig-height: 6.5
@@ -509,28 +466,14 @@ data_practice_cum %>%
   theme(strip.text = element_text(color = "white"),
         axis.text.x = element_text(angle = 45, hjust = 1)) +
   xlab("") + ylab("") +
-  labs(title = "Anzahl bearbeiteter Aufgaben", 
-       subtitle = "Rohwerte",
-       caption = ".25 < Cliff's d < .45")
+  labs(title = "Anzahl bearbeiteter Aufgaben", subtitle = "Rohwerte")
 ```
 
-```{r}
-#| echo: false
-#| results: hide
-library(effectsize)
-data_practice_cum %>% 
-  filter(UV != "guessing") %>% 
-  filter(practice !=0) %>% 
-  group_by(Topic) %>% 
-  do(cliff_d = cliffs_delta(practice ~ UV, 
-                            data = .)) %>% 
-  summarize(cliff_d = cliff_d$r_rank_biserial,
-            topic = Topic)
-```
 
 :::
 
 ::: {.column width='50%'}
+
 ```{r}
 #| fig-width: 6.5
 #| fig-height: 6.5
@@ -554,19 +497,20 @@ data_practice_cum %>%
   xlab("") + ylab("") +
   ylim(c(0,200)) +
   labs(title = "Anzahl bearbeiteter Aufgaben", 
-       subtitle = "Trunkierung bei 200 Aufgaben",
-       caption = ".25 < Cliff's d < .45")
+       subtitle = "Trunkierung bei 200 Aufgaben")
 ```
+
 
 :::
 
 ::::
 
 ## Ergebnisse  [{{< fa chart-pie >}}]{.imp}
+
 ```{r}
 #| fig-width: 4.5
 #| fig-height: 4.5
-#| out-width: 50%
+#| out-width: 45%
 
 data_examperformance_and_practice <-  
   data_exam %>% 
@@ -575,154 +519,30 @@ data_examperformance_and_practice <-
   ungroup() %>% 
   left_join(data_practice_cum) %>%
   mutate(performance_score_topic_std = performance_score_topic/3,
-         practice_hekto = practice/100) |> 
-  mutate(Gruppe = ifelse(UV == "repeatable_and_parametrized",
-                         "parametrisiert", "nicht param."),
-         Topic = factor(Topic, levels = c("Methodology",
-                                          "Measurement Theory",
-                                          "Distribution",
-                                          "Cross Table",
-                                          "Correlation",
-                                          "Mean Difference")))
+         practice_hekto = practice/100)
 
 
 data_examperformance_and_practice %>% 
   group_by(PID) %>% 
   summarize(sum_score = sum(performance_score_topic, na.rm = T),
             sum_practice = sum(practice, na.rm = T)) %>% 
-  ggplot(aes(log(sum_practice, base = 10), sum_score)) +
+  ggplot(aes(log(sum_practice), sum_score)) +
   geom_jitter(color = "#8cd000", alpha = .3) +
   theme_modern_rc() +
-  labs(title = "Effekt RP auf Leistung",
-       caption = "Kendall's \u03c4 = .50") +
+  labs(title = "Effekt RP auf Leistung") +
   xlab("log(Anzahl RP-Aufgaben)") + 
   ylab("Summenscore Klausur")
 ```
 
 
-```{r}
-#| results: hide
-cor(data_examperformance_and_practice %>% 
-      group_by(PID) %>% 
-      summarize(sum_score = sum(performance_score_topic, na.rm = T),
-                sum_practice = sum(practice, na.rm = T)) |> 
-      pull(sum_score),
-    data_examperformance_and_practice %>% 
-      group_by(PID) %>% 
-      summarize(sum_score = sum(performance_score_topic, na.rm = T),
-                sum_practice = sum(practice, na.rm = T)) |> 
-      pull(sum_practice),
-    method = "kendall")
-```
 
 
-## Ergebnisse  [{{< fa chart-pie >}}]{.imp}
-```{r}
-#| out-width: 21cm
-#| fig-height: 5.4
-#| fig-width: 7.8
-ggplot(data_examperformance_and_practice %>%
-         filter(UV != "guessing" & practice > 0),
-       aes(log(practice, base = 10), performance_score_topic, color = Gruppe)) +
-  geom_jitter(alpha = .5) +
-  facet_wrap(~Topic, scales = "free") +
-  stat_smooth(se = F) +
-  theme_modern_rc() + 
-  theme(strip.text = element_text(color = "white"),
-        legend.position = "right") +
-  scale_color_manual(values = c("#8cd000", "#d77d00")) +
-  xlim(c(.5, NA)) +
-  ylab("Klausur Score per Topic") +
-  xlab("log(RP-Aufgaben per Topic)") +
-  labs(caption = ".22 < \u03c4 < .38")
-```
+## Literatur
 
-```{r}
-#| results: hide
-data_examperformance_and_practice %>% 
-  group_by(Topic) %>% 
-  do(cor_prac_exam = cor(.$practice, .$performance_score_topic, 
-                         method = "kendall",
-                         use = "pairwise.complete.obs")) %>% 
-  summarize(cor_prac_exam = cor_prac_exam,
-            topic = Topic)
-```
-
-## Ergebnisse  [{{< fa chart-pie >}}]{.imp} {.center}
-```{r}
-#| out-width: 27cm
-#| fig-height: 4.3
-#| fig-width: 8.2
-data_exp_samplings |> 
-   mutate(Gruppe = ifelse(UV == "repeatable_and_parametrized",
-                         "param.", "nicht param."),
-         Topic = factor(Topic, levels = c("Methodology",
-                                          "Measurement Theory",
-                                          "Distribution",
-                                          "Cross Table",
-                                          "Correlation",
-                                          "Mean Difference"))) |> 
-  filter(!is.na(Gruppe)) |> 
-  ggplot(aes(Gruppe, `sit. Interesse`)) + 
-  geom_boxplot(color = "#ffffff", 
-               fill = "#ffffff10",
-               width = .2) + 
-  ggforce::geom_sina(color = "#8cd000", alpha = .7) +
-  facet_wrap( ~ Topic, nrow = 1) +
-  theme_modern_rc() + 
-  theme(strip.text = element_text(color = "white"),
-        legend.position = "right") +
-  labs(title = "Situationales Interesse",
-       subtitle = "per Topic",
-        caption = "-.12 < Cliff's d < .16")
-  
-```
-
-```{r}
-#| echo: false
-#| results: hide
-#| 
-data_exp_samplings |> 
-   mutate(Gruppe = ifelse(UV == "repeatable_and_parametrized",
-                         "parametrisiert", "nicht param."),
-         Topic = factor(Topic, levels = c("Methodology",
-                                          "Measurement Theory",
-                                          "Distribution",
-                                          "Cross Table",
-                                          "Correlation",
-                                          "Mean Difference"))) |> 
-  filter(!is.na(Gruppe)) |> 
-  group_by(Topic) %>% 
-  do(cliff_d = cliffs_delta(`sit. Interesse` ~ UV, 
-                            data = .)) %>% 
-  summarize(cliff_d = cliff_d$r_rank_biserial,
-            topic = Topic)
-```
-
-## Modellierung {.smaller .center}
-* Effekte der Parametrisierung Übehäufigkeit
-    * Zero-Inflated Poisson Regression mit `{brms}` zeigt Überdisperion
-    * Zero-Inflated Negative Binomial mit `{brms}` in PP-Checks und ELPD-Differenz »überlegen«
-* Effekte der Parametrisierung auf Leistung
-    * Zero-One-Inflated Beta Regression mit `{brms}` 
-        * zeigt »gute« PP-Checks
-        * Evidenz für moderate Effekte der Übehäufigkeit auf Leistung
-        * Evidenz für Nulleffekt eines Prädiktors `Gruppe`
-        * Evidenz für Nulleffekt eines Interaktionsterms `Gruppe * Übehäufigkeit`
-        
-## Diskussion [{{< fa comments >}}]{.imp} {.smaller}
-* Herausforderung: »Gar nicht Übende«
-    * Noch engere Verzahnung mit Video (z.B. H5P)?
-    * Intergration von RP in Präsenzsitzung (LMS via `{exams}`, `{shinylive}`, `{webr}`)
-    * Weitere Aufgabenformate via NLP/PTT?
-* Stärken
-    * Verglw. schwache Annahmen für Kausale Inferenzen
-    * Ökologische Validität
-* Limitationen
-    * Experimental Leakage/Attenuation (Lerngruppen etc.)
-    * Messtheoretische Güte der Leistungsvariable
-    * ...
-
-
-
-## Literatur {.smaller}
+::: {notes}
+* Bevor in Details der Definition, kleine historische Anmerkungen:
+    * Man findet findet über 110 Jahre alte Publikationen zum Testing Effekt
+    * Edwina Abbott 1909 Master Thesis Univ Illinois. Verlgeichbare Experimente zu den heutigen
+    * William Gosset t-Test ein JAhr vorher in der Biometrika 
+* Gegenstände mit solch langer Historie haben ja typischerweise keinen einheitliche Gebrauch von Begriffen. So auch hier
+:::
